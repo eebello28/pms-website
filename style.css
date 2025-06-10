@@ -49,11 +49,15 @@ ul li {
     width: 100%;
     max-width: 700px;
     height: auto;
-    margin-top: 1em;
+    margin-top: 2em;
     border-radius: 8px;
 }
+.main-image.reduced {
+    max-width: 600px;
+    margin-top: 3em;
+}
 form {
-    margin-top: 1.5em;
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,6 +70,10 @@ form input, form textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: 'Century Gothic', sans-serif;
+}
+form textarea {
+    height: 120px;
+    resize: vertical;
 }
 form button {
     background-color: #00427B;

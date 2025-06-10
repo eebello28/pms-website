@@ -6,53 +6,79 @@ body {
     background-color: #ffffff;
     color: #00427B;
 }
-
 header {
     text-align: center;
     padding: 2em;
     background-color: #f4f7fb;
 }
-
 .logo {
     max-width: 180px;
     height: auto;
     margin-bottom: 1em;
 }
-
 .slogan {
     font-size: 1.1em;
     color: #8FA2B0;
 }
-
 nav {
     text-align: center;
     background-color: #00427B;
     padding: 1em 0;
 }
-
 nav a {
     color: white;
     margin: 0 1.5em;
     text-decoration: none;
     font-weight: bold;
 }
-
 section {
     padding: 2em;
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
+    text-align: center;
 }
-
 ul {
     list-style: none;
     padding: 0;
-}
-
-ul li {
-    padding: 0.5em 0;
     color: #333;
 }
-
+ul li {
+    padding: 0.5em 0;
+}
+.main-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin-top: 1em;
+    border-radius: 8px;
+}
+form {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+form input, form textarea {
+    width: 90%;
+    max-width: 500px;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Century Gothic', sans-serif;
+}
+form button {
+    background-color: #00427B;
+    color: white;
+    border: none;
+    padding: 0.8em 2em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+form button:hover {
+    background-color: #00315a;
+}
 footer {
     text-align: center;
     padding: 1.5em;

@@ -68,7 +68,7 @@ section {
 ul {
   list-style: none;
   padding: 0;
-  color: #333;
+  color: #00427B;
 }
 
 ul li {
@@ -131,7 +131,67 @@ footer {
   color: white;
 }
 
-/* Responsive Styles */
+/* Sección Misión Visión Valores */
+#nosotros {
+  background-color: #f9fafd;
+  padding: 2em 1em;
+}
+
+.mvv-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.mvv-item {
+  border: 1px solid #8FA2B0;
+  border-radius: 10px;
+  padding: 1.5em;
+  flex: 1 1 250px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0,66,123,0.05);
+}
+
+.mvv-item h3 {
+  color: #00427B;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.mvv-item p {
+  color: #00427B;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.mvv-item ul {
+  color: #00427B;
+  text-align: left;
+  line-height: 1.6;
+  padding-left: 1.2em;
+  list-style-type: none;
+  margin: 0;
+}
+
+.mvv-item ul li::before {
+  content: "•";
+  color: #FF9900;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.mvv-item ul li strong {
+  font-weight: bold;
+  color: #00427B;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   nav .menu {
     display: none;
@@ -164,6 +224,10 @@ footer {
   form button {
     width: 80%;
   }
+
+  .mvv-container {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 480px) {
@@ -178,69 +242,4 @@ footer {
   nav a {
     font-size: 0.95em;
   }
-}
-/* Estilos para sección Nosotros (Misión, Visión, Valores) */
-#nosotros {
-    background-color: #f9fafd;
-    padding: 2em 1em;
-}
-
-.mvv-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    justify-content: center;
-    max-width: 900px;
-    margin: auto;
-}
-
-.mvv-item {
-    border: 1px solid #8FA2B0;
-    border-radius: 10px;
-    padding: 1.5em;
-    flex: 1 1 250px;
-    background: #ffffff;
-    box-shadow: 0 0 10px rgba(0,66,123,0.05);
-}
-
-.mvv-item h3 {
-    color: #00427B;
-    margin-bottom: 0.5em;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.mvv-item p {
-    color: #00427B;
-    text-align: justify;
-    line-height: 1.5;
-}
-
-.mvv-item ul {
-    color: #00427B;
-    text-align: left;
-    line-height: 1.6;
-    padding-left: 1.2em;
-    list-style-type: none;
-    margin: 0;
-}
-
-.mvv-item ul li::before {
-    content: "•";
-    color: #FF9900;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-
-.mvv-item ul li strong {
-    font-weight: bold;
-    color: #00427B;
-}
-
-@media (max-width: 768px) {
-    .mvv-container {
-        flex-direction: column;
-    }
 }

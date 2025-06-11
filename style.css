@@ -1,95 +1,181 @@
 
 body {
-    font-family: 'Century Gothic', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    color: #00427B;
+  font-family: 'Century Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #00427B;
 }
+
 header {
-    text-align: center;
-    padding: 2em;
-    background-color: #f4f7fb;
+  text-align: center;
+  padding: 2em;
+  background-color: #f4f7fb;
 }
+
 .logo {
-    max-width: 180px;
-    height: auto;
-    margin-bottom: 1em;
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 1em;
 }
+
 .slogan {
-    font-size: 1.1em;
-    color: #8FA2B0;
+  font-size: 1.1em;
+  color: #8FA2B0;
 }
+
 nav {
-    text-align: center;
-    background-color: #00427B;
-    padding: 1em 0;
+  background-color: #00427B;
+  text-align: center;
+  position: relative;
 }
+
+nav .menu {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 1em 0;
+}
+
 nav a {
-    color: white;
-    margin: 0 1.5em;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
+
+.menu-icon {
+  display: none;
+  font-size: 2em;
+  color: white;
+  padding: 1em;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+
+#menu-toggle {
+  display: none;
+}
+
 section {
-    padding: 2em;
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
+  padding: 2em;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
 }
+
 ul {
-    list-style: none;
-    padding: 0;
-    color: #333;
+  list-style: none;
+  padding: 0;
+  color: #333;
 }
+
 ul li {
-    padding: 0.5em 0;
+  padding: 0.5em 0;
 }
+
 .main-image {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    margin-top: 2em;
-    border-radius: 8px;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin-top: 2em;
+  border-radius: 8px;
 }
+
 .main-image.reduced {
-    max-width: 600px;
-    margin-top: 3em;
+  max-width: 600px;
+  margin-top: 3em;
 }
+
 form {
-    margin-top: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
 }
+
 form input, form textarea {
-    width: 90%;
-    max-width: 500px;
-    padding: 0.75em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: 'Century Gothic', sans-serif;
+  width: 90%;
+  max-width: 500px;
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Century Gothic', sans-serif;
 }
+
 form textarea {
-    height: 120px;
-    resize: vertical;
+  height: 120px;
+  resize: vertical;
 }
+
 form button {
-    background-color: #00427B;
-    color: white;
-    border: none;
-    padding: 0.8em 2em;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+  background-color: #00427B;
+  color: white;
+  border: none;
+  padding: 0.8em 2em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
 }
+
 form button:hover {
-    background-color: #00315a;
+  background-color: #00315a;
 }
+
 footer {
-    text-align: center;
-    padding: 1.5em;
+  text-align: center;
+  padding: 1.5em;
+  background-color: #00427B;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav .menu {
+    display: none;
+    flex-direction: column;
+    gap: 1em;
     background-color: #00427B;
-    color: white;
+  }
+
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  section {
+    padding: 1.5em 1em;
+  }
+
+  .main-image,
+  .main-image.reduced {
+    max-width: 90%;
+  }
+
+  form input, form textarea {
+    width: 95%;
+  }
+
+  form button {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4em;
+  }
+
+  .slogan {
+    font-size: 0.95em;
+  }
+
+  nav a {
+    font-size: 0.95em;
+  }
 }

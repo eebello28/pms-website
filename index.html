@@ -1,176 +1,75 @@
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Power Market Solutions, SRL</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon_white.ico" type="image/x-icon"/>
-</head>
-<body>
-<!-- Slider Container -->
-<div class="slider">
-  <div class="slide active">
-    <img src="images/slider1_logo.png" alt="Logo PMS">
-    <div class="caption">Power Market Solutions, SRL</div>
-  </div>
-  <div class="slide">
-    <img src="images/slider2_solar.png" alt="Paneles solares">
-    <div class="caption">Comprometidos con la sostenibilidad</div>
-  </div>
-  <div class="slide">
-    <img src="images/slider3_people.png" alt="Gente trabajando">
-    <div class="caption">Soluciones reales para el mercado eléctrico</div>
-  </div>
-</div>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Power Market Solutions, SRL (PMS)</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body class="is-preload">
 
-<style>
-.slider {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-}
+		<!-- Slider Container -->
+		<div class="slider">
+			<div class="slide active">
+				<img src="images/slider1_logo.png" alt="Logo PMS">
+			</div>
+			<div class="slide">
+				<img src="images/slider2_solar.png" alt="Paneles solares">
+			</div>
+			<div class="slide">
+				<img src="images/slider3_people.png" alt="Gente trabajando">
+			</div>
+		</div>
 
-.slide {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+		<!-- Aquí iría el resto del contenido de tu página -->
 
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+		<script>
+		let slideIndex = 0;
+		const slides = document.getElementsByClassName("slide");
 
-.slide.active {
-  display: block;
-}
+		function showSlides() {
+			for (let i = 0; i < slides.length; i++) {
+				slides[i].classList.remove("active");
+			}
+			slideIndex = (slideIndex + 1) % slides.length;
+			slides[slideIndex].classList.add("active");
+		}
 
-.caption {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 66, 123, 0.75);
-  color: white;
-  padding: 10px 20px;
-  font-size: 1em;
-  font-weight: bold;
-  border-radius: 5px;
-  text-align: center;
-}
+		setInterval(showSlides, 5000); // Cambia cada 5 segundos
+		</script>
 
-/* Responsive */
-@media (max-width: 768px) {
-  .slider {
-    height: 200px;
-  }
-  .caption {
-    font-size: 0.9em;
-    padding: 6px 12px;
-  }
-}
-</style>
-
-<script>
-let slideIndex = 0;
-const slides = document.getElementsByClassName("slide");
-
-function showSlides() {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("active");
-  }
-  slideIndex = (slideIndex + 1) % slides.length;
-  slides[slideIndex].classList.add("active");
-}
-
-setInterval(showSlides, 5000); // Cambiar cada 5 segundos
-</script>
-
-  <header>
-    <a href="https://pms.com.do">
-      <img src="images/logo_pms.png" alt="Logo PMS" class="logo" />
-    </a>
-    <h1>Power Market Solutions, SRL (PMS)</h1>
-    <p class="slogan">Expertos en regulación del mercado eléctrico dominicano y proyectos eléctricos.</p>
-  </header>
-
-  <nav>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <div class="menu">
-      <a href="#conocenos">Conócenos</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contáctanos</a>
-    </div>
-  </nav>
-
-  <section id="conocenos">
-    <h2>Conócenos</h2>
-    <p>Somos una empresa dedicada a brindar soluciones estratégicas en energía, regulación y optimización de costos. Nuestro equipo combina experiencia técnica con conocimiento profundo del mercado eléctrico dominicano.</p>
-    <img src="images/PMS1.png" alt="Consultoría Energética" class="main-image" />
-  </section>
-<!-- Sección: Nosotros (Misión, Visión, Valores) -->
-<section id="nosotros">
-    <div class="mvv-container">
-        <div class="mvv-item">
-            <h3>✨ Misión</h3>
-            <p>Brindar soluciones estratégicas y técnicas en el ámbito del mercado eléctrico, aportando eficiencia, cumplimiento regulatorio y valor agregado a nuestros clientes, a través de un equipo experto, ético y comprometido.</p>
-        </div>
-        <div class="mvv-item">
-            <h3>✨ Visión</h3>
-            <p>Ser la empresa de referencia en consultoría del Mercado Eléctrico Dominicano, reconocida por su excelencia técnica, compromiso con nuestros clientes y capacidad de anticiparse a los cambios regulatorios y del mercado eléctrico.</p>
-        </div>
-        <div class="mvv-item">
-            <h3>✨ Valores</h3>
-            <ul>
-                <li>Integridad</li>
-                <li>Excelencia</li>
-                <li>Responsabilidad</li>
-                <li>Compromiso con el cliente</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-  <section id="servicios">
-    <h2>Nuestros Servicios</h2>
-    <ul>
-      <li>Gestión Comercial Agentes del MEM </li>
-      <li>Habilitación y gestión de SMC</li>
-      <li>Gestión y administración de contratos (PPA)</li>
-      <li>Tramitación de Código de Conexión</li>
-       <li>Gestión de Puesta en marcha en SENI</li>
-       <li>Análisis de Mercado y Regulatorio del Sector Eléctrico</li>
-       <li>Capacitación comercial y regulatoria del MEM</li>
-    </ul>
-    <img src="images/PMS2.png" alt="Servicios técnicos" class="main-image" />
-  </section>
-
-  <section id="contacto">
-    <h2>Contáctanos</h2>
-    <p>¿Tienes una consulta o necesitas una propuesta? Escríbenos o contáctanos directamente por WhatsApp:</p>
-    <p>
-      📞 <a href="https://wa.me/18295765655">829-576-5655</a><br/>
-      📞 <a href="https://wa.me/18093033573">809-303-3573</a>
-    </p>
-    <form action="https://formsubmit.co/gerenciageneral@pms.com.do" method="POST">
-      <input type="text" name="name" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo" required />
-      <textarea name="message" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar mensaje</button>
-    </form>
-    <img src="images/PMS3.png" alt="Energía renovable" class="main-image reduced" />
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Power Market Solutions, SRL. Todos los derechos reservados.</p>
-  </footer>
-</body>
+		<style>
+		.slider {
+			position: relative;
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			overflow: hidden;
+			background-color: #f2f2f2;
+		}
+		.slide {
+			display: none;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.slide img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		.slide.active {
+			display: block;
+		}
+		@media (max-width: 768px) {
+			.slider {
+				aspect-ratio: 4 / 3;
+			}
+		}
+		</style>
+	</body>
 </html>

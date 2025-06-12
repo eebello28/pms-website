@@ -1,66 +1,143 @@
 
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Power Market Solutions, SRL</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Power Market Solutions, SRL</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="favicon_white.ico" rel="icon" type="image/x-icon"/>
 </head>
 <body>
-  <header>
-    <a href="https://pms.com.do">
-      <img src="images/logo_pms.png" alt="Logo PMS" class="logo" />
-    </a>
-    <h1>Power Market Solutions, SRL (PMS)</h1>
-    <p class="slogan">Expertos en regulación del mercado eléctrico dominicano y proyectos eléctricos.</p>
-  </header>
+<!-- Slider Container -->
+<div class="slider">
+<div class="slide fade">
+<img alt="Logo PMS" src="images/slider1_logo.png"/>
 
-  <nav>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <div class="menu">
-      <a href="#conocenos">Conócenos</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contáctanos</a>
-    </div>
-  </nav>
+</div>
+<div class="slide fade">
+<img alt="Paneles solares" src="images/slider2_solar.png"/>
 
-  <section id="conocenos">
-    <h2>Conócenos</h2>
-    <p>Somos una empresa dedicada a brindar soluciones estratégicas en energía, regulación y optimización de costos. Nuestro equipo combina experiencia técnica con conocimiento profundo del mercado eléctrico dominicano.</p>
-    <img src="images/PMS1.png" alt="Consultoría Energética" class="main-image" />
-  </section>
+</div>
+<div class="slide fade">
+<img alt="Gente trabajando" src="images/slider3_people.png"/>
 
-  <section id="servicios">
-    <h2>Nuestros Servicios</h2>
-    <ul>
-      <li>Consultoría en regulación del mercado eléctrico</li>
-      <li>Diseño de estrategias comerciales para generadoras</li>
-      <li>Análisis tarifario y estudios técnicos</li>
-      <li>Asesoría en proyectos eléctricos</li>
-    </ul>
-    <img src="images/PMS2.png" alt="Servicios técnicos" class="main-image" />
-  </section>
-
-  <section id="contacto">
-    <h2>Contáctanos</h2>
-    <p>¿Tienes una consulta o necesitas una propuesta? Escríbenos o contáctanos directamente por WhatsApp:</p>
-    <p>
+</div>
+</div>
+<style>
+.slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin-bottom: 2em;
+}
+.slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.fade {
+  animation: fadeEffect 1.5s;
+}
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+</style>
+<script>
+let slideIndex = 0;
+showSlides();
+function showSlides() {
+  let i;
+  const slides = document.getElementsByClassName("slide");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1;}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+</script>
+<header>
+<a href="https://pms.com.do">
+<img alt="Logo PMS" class="logo" src="images/logo_pms.png">
+</img></a>
+<h1>Power Market Solutions, SRL (PMS)</h1>
+<p class="slogan">Expertos en regulación del mercado eléctrico dominicano y proyectos eléctricos.</p>
+</header>
+<nav>
+<input id="menu-toggle" type="checkbox"/>
+<label class="menu-icon" for="menu-toggle">☰</label>
+<div class="menu">
+<a href="#conocenos">Conócenos</a>
+<a href="#servicios">Servicios</a>
+<a href="#contacto">Contáctanos</a>
+</div>
+</nav>
+<section id="conocenos">
+<h2>Conócenos</h2>
+<p>Somos una empresa dedicada a brindar soluciones estratégicas en energía, regulación y optimización de costos. Nuestro equipo combina experiencia técnica con conocimiento profundo del mercado eléctrico dominicano.</p>
+<img alt="Consultoría Energética" class="main-image" src="images/PMS1.png">
+</img></section>
+<!-- Sección: Nosotros (Misión, Visión, Valores) -->
+<section id="nosotros">
+<div class="mvv-container">
+<div class="mvv-item">
+<h3>✨ Misión</h3>
+<p>Brindar soluciones estratégicas y técnicas en el ámbito del mercado eléctrico, aportando eficiencia, cumplimiento regulatorio y valor agregado a nuestros clientes, a través de un equipo experto, ético y comprometido.</p>
+</div>
+<div class="mvv-item">
+<h3>✨ Visión</h3>
+<p>Ser la empresa de referencia en consultoría del Mercado Eléctrico Dominicano, reconocida por su excelencia técnica, compromiso con nuestros clientes y capacidad de anticiparse a los cambios regulatorios y del mercado eléctrico.</p>
+</div>
+<div class="mvv-item">
+<h3>✨ Valores</h3>
+<ul>
+<li>Integridad: Actuamos con transparencia, ética y honestidad en todo momento.</li>
+<li>Excelencia: Buscamos superar las expectativas mediante soluciones efectivas y precisas.</li>
+<li>Responsabilidad: Cumplimos con nuestros compromisos y promovemos la sostenibilidad.</li>
+<li>Compromiso con el cliente: Entendemos sus necesidades y nos enfocamos en generar impacto real.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="servicios">
+<h2>Nuestros Servicios</h2>
+<ul>
+<li>Consultoría en regulación del mercado eléctrico</li>
+<li>Diseño de estrategias comerciales para generadoras</li>
+<li>Análisis tarifario y estudios técnicos</li>
+<li>Asesoría en proyectos eléctricos</li>
+</ul>
+<img alt="Servicios técnicos" class="main-image" src="images/PMS2.png">
+</img></section>
+<section id="contacto">
+<h2>Contáctanos</h2>
+<p>¿Tienes una consulta o necesitas una propuesta? Escríbenos o contáctanos directamente por WhatsApp:</p>
+<p>
       📞 <a href="https://wa.me/18295765655">829-576-5655</a><br/>
       📞 <a href="https://wa.me/18093033573">809-303-3573</a>
-    </p>
-    <form action="https://formsubmit.co/gerenciageneral@pms.com.do" method="POST">
-      <input type="text" name="name" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo" required />
-      <textarea name="message" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar mensaje</button>
-    </form>
-    <img src="images/PMS3.png" alt="Energía renovable" class="main-image reduced" />
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Power Market Solutions, SRL. Todos los derechos reservados.</p>
-  </footer>
+</p>
+<form action="https://formsubmit.co/gerenciageneral@pms.com.do" method="POST">
+<input name="name" placeholder="Tu nombre" required="" type="text">
+<input name="email" placeholder="Tu correo" required="" type="email"/>
+<textarea name="message" placeholder="Tu mensaje" required=""></textarea>
+<button type="submit">Enviar mensaje</button>
+</input></form>
+<img alt="Energía renovable" class="main-image reduced" src="images/PMS3.png"/>
+</section>
+<footer>
+<p>© 2025 Power Market Solutions, SRL. Todos los derechos reservados.</p>
+</footer>
 </body>
 </html>

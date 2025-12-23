@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Blog | Power Market Solutions, S.R.L.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="favicon_white.ico" rel="icon" type="image/x-icon"/>
+    
+    <style>
+        :root {
+            --primary: #00427B;
+            --primary-dark: #002d54;
+            --pms-gray: #8FA2B0;
+            --light: #F8FAFC;
+            --dark: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Century Gothic', 'AppleGothic', 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            background-color: var(--white);
+        }
+
+        /* BARRA SUPERIOR E IDENTIDAD (Igual al Index) */
+        .top-bar {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 10%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            border-bottom: 2px solid var(--pms-gray);
+        }
+
+        header {
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-brand { display: flex; align-items: center; gap: 20px; text-decoration: none; }
+        .logo { max-width: 80px; height: auto; }
+        .brand-name {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.3rem;
+            line-height: 1.2;
+            border-left: 3px solid var(--pms-gray);
+            padding-left: 20px;
+        }
+
+        nav {
+            background: var(--primary-dark);
+            padding: 0 10%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            height: 55px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        /* SECCIÓN BLOG */
+        .blog-header {
+            background: var(--light);
+            padding: 60px 10%;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .blog-container {
+            padding: 60px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .blog-post {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .blog-post:hover { transform: translateY(-10px); }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            background: var(--pms-gray); /* Color temporal si no hay imagen */
+            object-fit: cover;
+        }
+
+        .post-content { padding: 25px; }
+        .post-date { color: var(--pms-gray); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+        .post-title { color: var(--primary); margin: 10px 0; font-size: 1.4rem; }
+        .post-excerpt { font-size: 0.95rem; color: #666; margin-bottom: 20px; }
+        
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border-bottom: 2px solid var(--pms-gray);
+            transition: 0.3s;
+        }
+        .read-more:hover { color: var(--pms-gray); }
+
+        footer { background: var(--primary); color: white; text-align: center; padding: 50px; margin-top: 50px; border-top: 5px solid var(--pms-gray); }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            .brand-name { border-left: none; padding-left: 0; padding-top: 10px; }
+            nav { justify-content: center; height: auto; padding: 10px; }
+            .blog-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div><span>📧 gerenciageneral@pms.com.do</span></div>
+    <div><span>📞 829-576-5655</span></div>
+</div>
+
+<header>
+    <a href="index.html" class="header-brand">
+        <img alt="Logo PMS" class="logo" src="images/logo_pms.png">
+        <div class="brand-name">POWER MARKET SOLUTIONS,<br>S.R.L.</div>
+    </a>
+</header>
+
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="index.html#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+    <a href="blog.html" style="color: var(--pms-gray);">Blog</a>
+</nav>
+
+<div class="blog-header">
+    <h1 style="color: var(--primary); margin: 0;">Actualidad Energética</h1>
+    <p style="color: var(--pms-gray); font-weight: 600;">Perspectivas y análisis del Mercado Eléctrico Dominicano</p>
+</div>
+
+<div class="blog-container">
+    <article class="blog-post">
+        <img src="images/blog1.jpg" alt="Mercado Eléctrico" class="post-image" onerror="this.style.display='none'">
+        <div class="post-content">
+            <span class="post-date">Diciembre 2025</span>
+            <h3 class="post-title">El futuro de las renovables en RD</h3>
+            <p class="post-excerpt">Analizamos las nuevas normativas para la inyección de energía limpia en la red nacional y su impacto en los costos operativos.</p>
+            <a href="#" class="read-more">Leer artículo completo</a>
+        </div>
+    </article>
+
+    <article class="blog-post">
+        <img src="images/blog2.jpg" alt="Eficiencia Energética" class="post-image" onerror="this.style.display='none'">
+        <div class="post-content">
+            <span class="post-date">Noviembre 2025</span>
+            <h3 class="post-title">Optimización de Contratos PPA</h3>
+            <p class="post-excerpt">Cómo una gestión comercial eficiente de los Agentes del Mercado puede reducir la factura eléctrica empresarial significativamente.</p>
+            <a href="#" class="read-more">Leer artículo completo</a>
+        </div>
+    </article>
+</div>
+
+<footer>
+    <p>© 2025 Power Market Solutions, S.R.L. | Santo Domingo, R.D.</p>
+</footer>
+
+</body>
+</html>

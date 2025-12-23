@@ -1,220 +1,122 @@
-/* 1. CONFIGURACIÓN DE COLORES Y FUENTES */
-:root {
-    --primary: #00427B;      /* Tu Azul PMS */
-    --secondary: #002d54;   /* Azul Oscuro para contraste */
-    --accent: #FF9900;      /* Tu Naranja para detalles */
-    --bg-light: #F8FAFC;    /* Gris muy claro (estilo AABI) */
-    --white: #ffffff;
-    --text-main: #334155;
-    --text-muted: #64748b;
-    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Power Market Solutions | Consultoría Energética</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"/>
+    <link href="favicon_white.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html">
+            <img src="images/logo_pms.png" alt="PMS Logo" class="nav-logo">
+        </a>
+        <div class="nav-menu">
+            <a href="index.html">Inicio</a>
+            <a href="#conocenos">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="blog.html">Blog</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </div>
+</nav>
 
-body {
-    font-family: 'Montserrat', sans-serif; /* Fuente profesional para títulos */
-    line-height: 1.6;
-    color: var(--text-main);
-    background-color: var(--white);
-    scroll-behavior: smooth;
-}
+<div class="slider-container">
+    <div class="slide fade">
+        <img src="images/slider1_logo.png" alt="Logo PMS">
+        <div class="slide-text"><h1>Expertos en Regulación Eléctrica</h1></div>
+    </div>
+    <div class="slide fade">
+        <img src="images/slider2_solar.png" alt="Paneles Solares">
+        <div class="slide-text"><h1>Proyectos de Energía Renovable</h1></div>
+    </div>
+    <div class="slide fade">
+        <img src="images/slider3_people.png" alt="Equipo PMS">
+        <div class="slide-text"><h1>Soluciones Estratégicas MEM</h1></div>
+    </div>
+</div>
 
-/* 2. NAVEGACIÓN (Navbar Fija) */
-.navbar {
-    background-color: var(--white);
-    padding: 1rem 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+<section id="conocenos" class="section-white">
+    <div class="container">
+        <div class="grid-2">
+            <div>
+                <span class="subtitle">SOBRE NOSOTROS</span>
+                <h2>Compromiso con la Excelencia Energética</h2>
+                <p>En <strong>Power Market Solutions (PMS)</strong>, combinamos experiencia técnica con un conocimiento profundo del mercado eléctrico dominicano para ofrecer resultados estratégicos a nuestros clientes.</p>
+                <p>Nuestro equipo está dedicado a la optimización de costos y al cumplimiento regulatorio riguroso.</p>
+            </div>
+            <div class="image-box">
+                <img src="images/PMS1.png" alt="Consultoría Energética">
+            </div>
+        </div>
+    </div>
+</section>
 
-.nav-logo {
-    height: 60px; /* Tamaño ideal para logo tipo AABI */
-    width: auto;
-}
+<section id="nosotros" class="section-light">
+    <div class="container">
+        <div class="mvv-container">
+            <div class="mvv-item">
+                <div class="icon">✨</div>
+                <h3>Misión</h3>
+                <p>Brindar soluciones estratégicas y técnicas aportando eficiencia, cumplimiento regulatorio y valor agregado a través de un equipo experto y ético.</p>
+            </div>
+            <div class="mvv-item">
+                <div class="icon">👁️</div>
+                <h3>Visión</h3>
+                <p>Ser la empresa de referencia en consultoría del Mercado Eléctrico Dominicano, reconocida por su excelencia técnica y compromiso.</p>
+            </div>
+            <div class="mvv-item">
+                <div class="icon">🤝</div>
+                <h3>Valores</h3>
+                <p>Integridad, Excelencia, Responsabilidad y un compromiso real con el impacto de nuestros clientes.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-.nav-menu {
-    display: flex;
-    gap: 2rem;
-}
+<section id="servicios" class="section-white">
+    <div class="container">
+        <span class="subtitle" style="text-align:center; display:block;">NUESTROS SERVICIOS</span>
+        <h2 style="text-align:center;">Experticia a su Servicio</h2>
+        <div class="services-grid">
+            <div class="service-item"><h3>Gestión Comercial Agentes MEM</h3></div>
+            <div class="service-item"><h3>Habilitación de SMC</h3></div>
+            <div class="service-item"><h3>Gestión de Contratos (PPA)</h3></div>
+            <div class="service-item"><h3>Tramitación Código de Conexión</h3></div>
+            <div class="service-item"><h3>Puesta en marcha en SENI</h3></div>
+            <div class="service-item"><h3>Análisis de Mercado y Regulatorio</h3></div>
+        </div>
+    </div>
+</section>
 
-.nav-menu a {
-    text-decoration: none;
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
+<section id="contacto" class="section-light">
+    <div class="container">
+        <h2 style="text-align:center;">Contáctanos</h2>
+        <div class="contact-box">
+            <div class="contact-info">
+                <p>📞 <a href="https://wa.me/18295765655">829-576-5655</a></p>
+                <p>📞 <a href="https://wa.me/18093033573">809-303-3573</a></p>
+                <p>📧 gerenciageneral@pms.com.do</p>
+            </div>
+            <form action="https://formsubmit.co/gerenciageneral@pms.com.do" method="POST">
+                <input name="name" placeholder="Tu nombre" required type="text">
+                <input name="email" placeholder="Tu correo" required type="email">
+                <textarea name="message" placeholder="¿En qué podemos ayudarte?" required rows="5"></textarea>
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+</section>
 
-.nav-menu a:hover {
-    color: var(--accent);
-}
+<a href="https://wa.me/18295765655" class="whatsapp-float" target="_blank">
+    💬 WhatsApp Directo
+</a>
 
-.nav-highlight {
-    color: var(--accent) !important;
-    border-bottom: 2px solid var(--accent);
-}
-
-/* 3. HERO SECTION (Portada Impactante) */
-.hero {
-    background: linear-gradient(rgba(0, 66, 123, 0.8), rgba(0, 66, 123, 0.8)), 
-                url('images/slider2_solar.png') no-repeat center center/cover;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
-    padding: 0 10%;
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.btn-primary {
-    background-color: var(--accent);
-    color: var(--white);
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-primary:hover {
-    background-color: #e68a00;
-    transform: translateY(-3px);
-}
-
-/* 4. ESTRUCTURA DE SECCIONES */
-section {
-    padding: 100px 10%;
-}
-
-.section-white { background-color: var(--white); }
-.section-light { background-color: var(--bg-light); }
-
-.subtitle {
-    color: var(--accent);
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-h2 {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 2rem;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* 5. GRID DE SERVICIOS (Estilo Bloques AABI) */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.service-item {
-    background: var(--white);
-    padding: 3rem 2rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    transition: 0.3s;
-    border-top: 4px solid var(--primary);
-}
-
-.service-item:hover {
-    transform: translateY(-10px);
-}
-
-.service-item .icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    display: block;
-}
-
-/* 6. DISEÑO DE DOS COLUMNAS (Nosotros) */
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.image-box img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-
-/* 7. FOOTER PROFESIONAL */
-footer {
-    background-color: var(--secondary);
-    color: var(--white);
-    padding: 5rem 10% 2rem;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 4rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 3rem;
-}
-
-.footer-logo {
-    height: 50px;
-    margin-bottom: 1.5rem;
-    filter: brightness(0) invert(1); /* Hace el logo blanco para el fondo oscuro */
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-
-/* 8. RESPONSIVE (Móviles) */
-@media (max-width: 768px) {
-    .grid-2 {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .nav-menu {
-        display: none; /* Aquí podrías luego implementar un menú hamburguesa */
-    }
-}
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <img src="images/logo_pms.png"

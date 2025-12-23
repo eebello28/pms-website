@@ -1,245 +1,218 @@
-
-body {
-  font-family: 'Century Gothic', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  color: #00427B;
+/* Variables para facilitar cambios de color globales */
+:root {
+  --primary-blue: #00427B;
+  --accent-orange: #FF9900;
+  --light-gray: #f4f7fb;
+  --text-dim: #8FA2B0;
+  --white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 66, 123, 0.08);
 }
 
+body {
+  font-family: 'Century Gothic', 'AppleGothic', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  color: var(--primary-blue);
+  scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
+}
+
+/* --- HEADER --- */
 header {
   text-align: center;
-  padding: 2em;
-  background-color: #f4f7fb;
+  padding: 3em 1em;
+  background-color: var(--light-gray);
+  border-bottom: 1px solid #e1e8ef;
 }
 
 .logo {
-  max-width: 180px;
+  max-width: 200px;
   height: auto;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .slogan {
-  font-size: 1.1em;
-  color: #8FA2B0;
+  font-size: 1.2em;
+  color: var(--text-dim);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
+/* --- NAVEGACIÓN --- */
 nav {
-  background-color: #00427B;
-  text-align: center;
-  position: relative;
+  background-color: var(--primary-blue);
+  position: sticky; /* Se queda fijo al bajar con el scroll */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav .menu {
   display: flex;
   justify-content: center;
-  gap: 2em;
-  padding: 1em 0;
+  gap: 3em;
+  padding: 1.2em 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
-.menu-icon {
-  display: none;
-  font-size: 2em;
-  color: white;
-  padding: 1em;
-  cursor: pointer;
-  position: absolute;
-  right: 10px;
-  top: 0;
+nav a:hover {
+  color: var(--accent-orange);
 }
 
-#menu-toggle {
-  display: none;
-}
-
+/* --- SECCIONES GENERALES --- */
 section {
-  padding: 2em;
-  max-width: 900px;
+  padding: 5em 2em; /* Más espacio para que el diseño "respire" */
+  max-width: 1000px;
   margin: auto;
   text-align: center;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  color: #00427B;
+h2 {
+  font-size: 2.2em;
+  margin-bottom: 1.5em;
+  position: relative;
+  display: inline-block;
 }
 
-ul li {
-  padding: 0.5em 0;
+h2::after {
+  content: '';
+  width: 50%;
+  height: 3px;
+  background-color: var(--accent-orange);
+  display: block;
+  margin: 10px auto 0;
 }
 
+/* --- SERVICIOS --- */
+#servicios ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5em;
+  text-align: left;
+  margin-top: 2em;
+}
+
+#servicios ul li {
+  background: var(--light-gray);
+  padding: 1.5em;
+  border-radius: 8px;
+  border-left: 5px solid var(--primary-blue);
+  transition: transform 0.3s ease;
+}
+
+#servicios ul li:hover {
+  transform: translateX(10px);
+  background: #ebf0f5;
+}
+
+/* --- IMÁGENES --- */
 .main-image {
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
   height: auto;
-  margin-top: 2em;
-  border-radius: 8px;
-}
-
-.main-image.reduced {
-  max-width: 600px;
   margin-top: 3em;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
 }
 
-form {
-  margin-top: 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-}
-
-form input, form textarea {
-  width: 90%;
-  max-width: 500px;
-  padding: 0.75em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: 'Century Gothic', sans-serif;
-}
-
-form textarea {
-  height: 120px;
-  resize: vertical;
-}
-
-form button {
-  background-color: #00427B;
-  color: white;
-  border: none;
-  padding: 0.8em 2em;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-form button:hover {
-  background-color: #00315a;
-}
-
-footer {
-  text-align: center;
-  padding: 1.5em;
-  background-color: #00427B;
-  color: white;
-}
-
-/* Sección Misión Visión Valores */
+/* --- MISIÓN, VISIÓN, VALORES --- */
 #nosotros {
   background-color: #f9fafd;
-  padding: 2em 1em;
 }
 
 .mvv-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  justify-content: center;
-  max-width: 900px;
-  margin: auto;
+  display: grid; /* Cambiado a Grid para mejor alineación */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5em;
 }
 
 .mvv-item {
-  border: 1px solid #8FA2B0;
-  border-radius: 10px;
-  padding: 1.5em;
-  flex: 1 1 250px;
-  background: #ffffff;
-  box-shadow: 0 0 10px rgba(0,66,123,0.05);
+  border: none; /* Quitamos el borde para usar sombras más modernas */
+  border-radius: 15px;
+  padding: 2.5em;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.mvv-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 66, 123, 0.15);
 }
 
 .mvv-item h3 {
-  color: #00427B;
-  margin-bottom: 0.5em;
-  font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.4em;
+  margin-bottom: 1em;
 }
 
-.mvv-item p {
-  color: #00427B;
-  text-align: justify;
-  line-height: 1.5;
+/* --- FORMULARIO --- */
+form {
+  background: var(--white);
+  padding: 3em;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin: 3em auto;
 }
 
-.mvv-item ul {
-  color: #00427B;
-  text-align: left;
-  line-height: 1.6;
-  padding-left: 1.2em;
-  list-style-type: none;
-  margin: 0;
+form input, form textarea {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  background-color: #fcfcfc;
+  transition: border-color 0.3s;
 }
 
-.mvv-item ul li::before {
-  content: "•";
-  color: #FF9900;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  background-color: #fff;
 }
 
-.mvv-item ul li strong {
-  font-weight: bold;
-  color: #00427B;
+form button {
+  background-color: var(--primary-blue);
+  width: 100%;
+  padding: 1.2em;
+  font-size: 1.1em;
+  transition: all 0.3s;
 }
 
-/* Responsive */
+form button:hover {
+  background-color: var(--accent-orange);
+  transform: translateY(-2px);
+}
+
+/* --- FOOTER --- */
+footer {
+  padding: 3em;
+  background-color: #002d54; /* Un azul un poco más oscuro para el fondo */
+}
+
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   nav .menu {
-    display: none;
-    flex-direction: column;
     gap: 1em;
-    background-color: #00427B;
-  }
-
-  #menu-toggle:checked + .menu-icon + .menu {
-    display: flex;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-
-  section {
-    padding: 1.5em 1em;
-  }
-
-  .main-image,
-  .main-image.reduced {
-    max-width: 90%;
-  }
-
-  form input, form textarea {
-    width: 95%;
-  }
-
-  form button {
-    width: 80%;
-  }
-
-  .mvv-container {
     flex-direction: column;
+    padding: 1em;
   }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.4em;
-  }
-
-  .slogan {
-    font-size: 0.95em;
-  }
-
-  nav a {
-    font-size: 0.95em;
-  }
+  
+  section { padding: 3em 1.5em; }
+  
+  h2 { font-size: 1.8em; }
 }

@@ -3,82 +3,282 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Power Market Solutions | Consultoría Energética</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Power Market Solutions, SRL | Consultoría Eléctrica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet"/>
+    <link href="favicon_white.ico" rel="icon" type="image/x-icon"/>
+    
+    <style>
+        /* Estilos rápidos integrados para mejorar la apariencia inmediatamente */
+        :root {
+            --primary: #003366; /* Azul corporativo */
+            --accent: #00a859;  /* Verde energía/sostenibilidad */
+            --light: #f4f7f6;
+            --dark: #333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            background-color: #fff;
+        }
+
+        /* Header y Navegación */
+        header {
+            padding: 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .logo { max-width: 180px; height: auto; }
+
+        nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        /* Slider Optimizado */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        /* Secciones */
+        section {
+            padding: 60px 10% ;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* Misión, Visión, Valores en Tarjetas */
+        .mvv-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .mvv-item {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            border-bottom: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .mvv-item:hover { transform: translateY(-5px); }
+
+        /* Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 20px;
+            border-left: 5px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Formulario Profesional */
+        form {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        button:hover { background: #002244; }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .slider { height: 250px; }
+            .slide img { height: 250px; }
+            section { padding: 40px 5%; }
+        }
+    </style>
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="nav-container">
-        <a href="index.html"><img src="images/logo_pms.png" alt="PMS Logo" class="nav-logo"></a>
-        <div class="nav-menu">
-            <a href="index.html">Inicio</a>
-            <a href="#conocenos">Nosotros</a>
-            <a href="#servicios">Servicios</a>
-            <a href="blog.html" class="nav-highlight">Blog</a> <a href="#contacto">Contacto</a>
-        </div>
-    </div>
-</nav>
-
-<header class="hero">
-    <div class="hero-content">
-        <h1>Soluciones Inteligentes para el Mercado Eléctrico</h1>
-        <p>Expertos en regulación, optimización y gestión energética en República Dominicana.</p>
-        <a href="#contacto" class="btn-primary">Solicitar Consultoría</a>
-    </div>
+<header>
+    <a href="https://pms.com.do">
+        <img alt="Logo PMS" class="logo" src="images/logo_pms.png">
+    </a>
 </header>
 
-<section id="conocenos" class="section-white">
-    <div class="container">
-        <div class="grid-2">
-            <div>
-                <span class="subtitle">SOBRE NOSOTROS</span>
-                <h2>Compromiso con la Excelencia Energética</h2>
-                <p>En PMS, combinamos experiencia técnica con un conocimiento profundo del mercado eléctrico dominicano para ofrecer resultados reales.</p>
-            </div>
-            <div class="image-box">
-                <img src="images/PMS1.png" alt="Nosotros">
-            </div>
+<nav>
+    <a href="#conocenos">Conócenos</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+<div class="slider">
+    <div class="slide fade"><img alt="Logo PMS" src="images/slider1_logo.png"/></div>
+    <div class="slide fade"><img alt="Paneles solares" src="images/slider2_solar.png"/></div>
+    <div class="slide fade"><img alt="Gente trabajando" src="images/slider3_people.png"/></div>
+</div>
+
+<section id="conocenos">
+    <h2>¿Quiénes Somos?</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+        <div style="flex: 1; min-width: 300px;">
+            <p><strong>Power Market Solutions, SRL (PMS)</strong> es una empresa dedicada a brindar soluciones estratégicas en energía, regulación y optimización de costos.</p>
+            <p>Nuestro equipo combina excelencia técnica con un conocimiento profundo del mercado eléctrico dominicano, garantizando resultados eficientes para su empresa.</p>
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+            <img alt="Consultoría Energética" style="width: 100%; border-radius: 10px;" src="images/PMS1.png">
+        </div>
+    </div>
+
+    <div class="mvv-container">
+        <div class="mvv-item">
+            <h3>✨ Misión</h3>
+            <p>Brindar soluciones estratégicas y técnicas aportando eficiencia y cumplimiento regulatorio a través de un equipo experto.</p>
+        </div>
+        <div class="mvv-item">
+            <h3>✨ Visión</h3>
+            <p>Ser la consultora de referencia en el Mercado Eléctrico Dominicano, reconocida por nuestra excelencia y anticipación a cambios.</p>
+        </div>
+        <div class="mvv-item">
+            <h3>✨ Valores</h3>
+            <p>Integridad, Excelencia, Responsabilidad y Compromiso Real con el Cliente.</p>
         </div>
     </div>
 </section>
 
-<section id="servicios" class="section-light">
-    <div class="container">
-        <span class="subtitle" style="text-align:center; display:block;">NUESTROS SERVICIOS</span>
-        <h2 style="text-align:center;">Experticia a su Servicio</h2>
-        <div class="services-grid">
-            <div class="service-item">
-                <div class="icon">⚡</div>
-                <h3>Gestión Comercial MEM</h3>
-                <p>Administración y representación ante los agentes del mercado.</p>
-            </div>
-            <div class="service-item">
-                <div class="icon">📊</div>
-                <h3>Análisis Regulatorio</h3>
-                <p>Estudios detallados del sector eléctrico y cumplimiento legal.</p>
-            </div>
-            </div>
+<section id="servicios" style="background: #f9f9f9;">
+    <h2>Nuestros Servicios</h2>
+    <div class="services-grid">
+        <div class="service-card">Gestión Comercial Agentes del MEM.</div>
+        <div class="service-card">Habilitación de SMC (Medición Comercial).</div>
+        <div class="service-card">Gestión y administración de contratos (PPA).</div>
+        <div class="service-card">Tramitación de Código de Conexión.</div>
+        <div class="service-card">Gestión de Puesta en marcha en SENI.</div>
+        <div class="service-card">Análisis de Mercado y Regulatorio.</div>
     </div>
 </section>
+
+<section id="contacto">
+    <h2>Contáctanos</h2>
+    <p style="text-align: center;">¿Necesitas una propuesta? Nuestro equipo está listo para asesorarte.</p>
+    
+    <form action="https://formsubmit.co/gerenciageneral@pms.com.do" method="POST">
+        <input name="name" placeholder="Nombre completo" required="" type="text">
+        <input name="email" placeholder="Correo electrónico corporativo" required="" type="email"/>
+        <textarea name="message" placeholder="¿En qué podemos ayudarte?" required="" rows="5"></textarea>
+        <button type="submit">Enviar Solicitud</button>
+    </form>
+</section>
+
+<a href="https://wa.me/18295765655" class="whatsapp-float" target="_blank">
+    💬 WhatsApp Directo
+</a>
 
 <footer>
-    <div class="container footer-grid">
-        <div>
-            <img src="images/logo_pms.png" alt="Logo White" class="footer-logo">
-            <p>Líderes en consultoría eléctrica estratégica.</p>
-        </div>
-        <div>
-            <h4>Contacto</h4>
-            <p>829-576-5655 | 809-303-3573</p>
-            <p>gerenciageneral@pms.com.do</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 Power Market Solutions. Todos los derechos reservados.</p>
-    </div>
+    <p>© 2025 Power Market Solutions, SRL. Santo Domingo, R.D.</p>
 </footer>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+        let slides = document.getElementsByClassName("slide");
+        for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1;}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 4000); 
+    }
+</script>
 
 </body>
 </html>

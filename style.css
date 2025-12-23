@@ -1,122 +1,244 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Power Market Solutions | Consultoría Energética</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet"/>
-    <link href="favicon_white.ico" rel="icon" type="image/x-icon"/>
-</head>
-<body>
+body {
+  font-family: 'Century Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #00427B;
+}
 
-<nav class="navbar">
-    <div class="nav-container">
-        <a href="index.html">
-            <img src="images/logo_pms.png" alt="PMS Logo" class="nav-logo">
-        </a>
-        <div class="nav-menu">
-            <a href="index.html">Inicio</a>
-            <a href="#conocenos">Nosotros</a>
-            <a href="#servicios">Servicios</a>
-            <a href="blog.html">Blog</a>
-            <a href="#contacto">Contacto</a>
-        </div>
-    </div>
-</nav>
+header {
+  text-align: center;
+  padding: 2em;
+  background-color: #f4f7fb;
+}
 
-<div class="slider-container">
-    <div class="slide fade">
-        <img src="images/slider1_logo.png" alt="Logo PMS">
-        <div class="slide-text"><h1>Expertos en Regulación Eléctrica</h1></div>
-    </div>
-    <div class="slide fade">
-        <img src="images/slider2_solar.png" alt="Paneles Solares">
-        <div class="slide-text"><h1>Proyectos de Energía Renovable</h1></div>
-    </div>
-    <div class="slide fade">
-        <img src="images/slider3_people.png" alt="Equipo PMS">
-        <div class="slide-text"><h1>Soluciones Estratégicas MEM</h1></div>
-    </div>
-</div>
+.logo {
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 1em;
+}
 
-<section id="conocenos" class="section-white">
-    <div class="container">
-        <div class="grid-2">
-            <div>
-                <span class="subtitle">SOBRE NOSOTROS</span>
-                <h2>Compromiso con la Excelencia Energética</h2>
-                <p>En <strong>Power Market Solutions (PMS)</strong>, combinamos experiencia técnica con un conocimiento profundo del mercado eléctrico dominicano para ofrecer resultados estratégicos a nuestros clientes.</p>
-                <p>Nuestro equipo está dedicado a la optimización de costos y al cumplimiento regulatorio riguroso.</p>
-            </div>
-            <div class="image-box">
-                <img src="images/PMS1.png" alt="Consultoría Energética">
-            </div>
-        </div>
-    </div>
-</section>
+.slogan {
+  font-size: 1.1em;
+  color: #8FA2B0;
+}
 
-<section id="nosotros" class="section-light">
-    <div class="container">
-        <div class="mvv-container">
-            <div class="mvv-item">
-                <div class="icon">✨</div>
-                <h3>Misión</h3>
-                <p>Brindar soluciones estratégicas y técnicas aportando eficiencia, cumplimiento regulatorio y valor agregado a través de un equipo experto y ético.</p>
-            </div>
-            <div class="mvv-item">
-                <div class="icon">👁️</div>
-                <h3>Visión</h3>
-                <p>Ser la empresa de referencia en consultoría del Mercado Eléctrico Dominicano, reconocida por su excelencia técnica y compromiso.</p>
-            </div>
-            <div class="mvv-item">
-                <div class="icon">🤝</div>
-                <h3>Valores</h3>
-                <p>Integridad, Excelencia, Responsabilidad y un compromiso real con el impacto de nuestros clientes.</p>
-            </div>
-        </div>
-    </div>
-</section>
+nav {
+  background-color: #00427B;
+  text-align: center;
+  position: relative;
+}
 
-<section id="servicios" class="section-white">
-    <div class="container">
-        <span class="subtitle" style="text-align:center; display:block;">NUESTROS SERVICIOS</span>
-        <h2 style="text-align:center;">Experticia a su Servicio</h2>
-        <div class="services-grid">
-            <div class="service-item"><h3>Gestión Comercial Agentes MEM</h3></div>
-            <div class="service-item"><h3>Habilitación de SMC</h3></div>
-            <div class="service-item"><h3>Gestión de Contratos (PPA)</h3></div>
-            <div class="service-item"><h3>Tramitación Código de Conexión</h3></div>
-            <div class="service-item"><h3>Puesta en marcha en SENI</h3></div>
-            <div class="service-item"><h3>Análisis de Mercado y Regulatorio</h3></div>
-        </div>
-    </div>
-</section>
+nav .menu {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 1em 0;
+}
 
-<section id="contacto" class="section-light">
-    <div class="container">
-        <h2 style="text-align:center;">Contáctanos</h2>
-        <div class="contact-box">
-            <div class="contact-info">
-                <p>📞 <a href="https://wa.me/18295765655">829-576-5655</a></p>
-                <p>📞 <a href="https://wa.me/18093033573">809-303-3573</a></p>
-                <p>📧 gerenciageneral@pms.com.do</p>
-            </div>
-            <form action="https://formsubmit.co/gerenciageneral@pms.com.do" method="POST">
-                <input name="name" placeholder="Tu nombre" required type="text">
-                <input name="email" placeholder="Tu correo" required type="email">
-                <textarea name="message" placeholder="¿En qué podemos ayudarte?" required rows="5"></textarea>
-                <button type="submit" class="btn-primary">Enviar Mensaje</button>
-            </form>
-        </div>
-    </div>
-</section>
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-<a href="https://wa.me/18295765655" class="whatsapp-float" target="_blank">
-    💬 WhatsApp Directo
-</a>
+.menu-icon {
+  display: none;
+  font-size: 2em;
+  color: white;
+  padding: 1em;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
 
-<footer>
-    <div class="container footer-grid">
-        <div>
-            <img src="images/logo_pms.png"
+#menu-toggle {
+  display: none;
+}
+
+section {
+  padding: 2em;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  color: #00427B;
+}
+
+ul li {
+  padding: 0.5em 0;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin-top: 2em;
+  border-radius: 8px;
+}
+
+.main-image.reduced {
+  max-width: 600px;
+  margin-top: 3em;
+}
+
+form {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+form input, form textarea {
+  width: 90%;
+  max-width: 500px;
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Century Gothic', sans-serif;
+}
+
+form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+form button {
+  background-color: #00427B;
+  color: white;
+  border: none;
+  padding: 0.8em 2em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #00315a;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5em;
+  background-color: #00427B;
+  color: white;
+}
+
+/* Sección Misión Visión Valores */
+#nosotros {
+  background-color: #f9fafd;
+  padding: 2em 1em;
+}
+
+.mvv-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.mvv-item {
+  border: 1px solid #8FA2B0;
+  border-radius: 10px;
+  padding: 1.5em;
+  flex: 1 1 250px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0,66,123,0.05);
+}
+
+.mvv-item h3 {
+  color: #00427B;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.mvv-item p {
+  color: #00427B;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.mvv-item ul {
+  color: #00427B;
+  text-align: left;
+  line-height: 1.6;
+  padding-left: 1.2em;
+  list-style-type: none;
+  margin: 0;
+}
+
+.mvv-item ul li::before {
+  content: "•";
+  color: #FF9900;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.mvv-item ul li strong {
+  font-weight: bold;
+  color: #00427B;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav .menu {
+    display: none;
+    flex-direction: column;
+    gap: 1em;
+    background-color: #00427B;
+  }
+
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  section {
+    padding: 1.5em 1em;
+  }
+
+  .main-image,
+  .main-image.reduced {
+    max-width: 90%;
+  }
+
+  form input, form textarea {
+    width: 95%;
+  }
+
+  form button {
+    width: 80%;
+  }
+
+  .mvv-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4em;
+  }
+
+  .slogan {
+    font-size: 0.95em;
+  }
+
+  nav a {
+    font-size: 0.95em;
+  }
+}

@@ -3,207 +3,212 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Power Market Solutions, SRL | Consultoría Eléctrica</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Power Market Solutions, S.R.L. | Consultoría Eléctrica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="favicon_white.ico" rel="icon" type="image/x-icon"/>
     
     <style>
         :root {
-            --primary: #003366; 
-            --accent: #00a859;  
-            --light: #f4f7f6;
+            /* TUS COLORES EXACTOS */
+            --primary: #00427B;      /* Azul PMS */
+            --primary-dark: #002d54; /* Azul Oscuro para contraste */
+            --pms-gray: #8FA2B0;     /* Gris PMS */
+            --accent: #FF9900;       /* Naranja para botones (opcional, combina bien) */
+            --light: #F8FAFC;
             --dark: #333;
+            --white: #ffffff;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            /* Century Gothic como principal, Montserrat como respaldo */
+            font-family: 'Century Gothic', 'AppleGothic', 'Montserrat', sans-serif;
             line-height: 1.6;
             color: var(--dark);
             margin: 0;
-            background-color: #fff;
+            background-color: var(--white);
         }
 
-        header {
-            padding: 20px;
-            text-align: center;
-            background: white;
-        }
-
-        .logo { max-width: 180px; height: auto; }
-
-        nav {
+        /* BARRA SUPERIOR (Estilo AABI) */
+        .top-bar {
             background: var(--primary);
-            padding: 15px 0;
+            color: var(--white);
+            padding: 10px 10%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            border-bottom: 2px solid var(--pms-gray);
+        }
+        .top-bar div { display: flex; gap: 20px; }
+        .top-bar span { font-weight: 300; }
+
+        /* HEADER (Logo Izquierda + Nombre) */
+        header {
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+        }
+
+        .logo { max-width: 80px; height: auto; }
+
+        .brand-name {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.3rem;
+            line-height: 1.2;
+            border-left: 3px solid var(--pms-gray);
+            padding-left: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        /* NAVEGACIÓN (Menú Derecha) */
+        nav {
+            background: var(--primary-dark);
+            padding: 0 10%;
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            justify-content: flex-end;
+            height: 55px;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         nav a {
-            color: white;
+            color: var(--white);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9em;
             text-transform: uppercase;
-            transition: color 0.3s;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
         }
 
-        nav a:hover { color: var(--accent); }
-
-        .slider {
-            position: relative;
-            width: 100%;
-            height: 450px;
-            overflow: hidden;
+        nav a:hover { 
+            color: var(--pms-gray); 
+            background: rgba(255,255,255,0.05);
         }
 
-        .slide img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
+        /* SLIDER */
+        .slider { position: relative; width: 100%; height: 500px; overflow: hidden; background: #000; }
+        .slide img { width: 100%; height: 500px; object-fit: cover; opacity: 0.75; }
+
+        /* SECCIONES */
+        section { padding: 80px 10% ; max-width: 1200px; margin: 0 auto; }
+        h2 { 
+            color: var(--primary); 
+            font-size: 2.5em; 
+            text-align: center; 
+            margin-bottom: 50px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        h2::after { 
+            content: ''; 
+            width: 80px; 
+            height: 5px; 
+            background: var(--pms-gray); 
+            display: block; 
+            margin: 15px auto; 
         }
 
-        section {
-            padding: 60px 10% ;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            color: var(--primary);
-            font-size: 2.2em;
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            display: block;
-            margin: 10px auto;
-        }
-
-        /* AJUSTE DE SIMETRÍA PARA MVV */
+        /* SIMETRÍA MVV (Fila Horizontal) */
         .mvv-container {
             display: grid;
-            /* Forzamos 3 columnas en desktop */
             grid-template-columns: repeat(3, 1fr); 
-            gap: 20px;
-            margin-top: 30px;
-            align-items: stretch; /* Hace que todas tengan la misma altura */
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .mvv-item {
-            background: var(--light);
-            padding: 25px;
-            border-radius: 10px;
-            border-bottom: 4px solid var(--primary);
-            transition: transform 0.3s;
-            text-align: center; /* Centramos el texto para más simetría */
-        }
-
-        .mvv-item h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .mvv-item:hover { transform: translateY(-5px); }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 20px;
-            border-left: 5px solid var(--accent);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        form {
-            background: var(--light);
-            padding: 40px;
-            border-radius: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-family: inherit;
-        }
-
-        button {
-            background: var(--primary);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        button:hover { background: #002244; }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-
-        footer {
-            background: var(--primary);
-            color: white;
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+            border-top: 6px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             text-align: center;
-            padding: 40px;
-            margin-top: 50px;
+            transition: transform 0.3s ease;
         }
+        .mvv-item:hover { transform: translateY(-10px); border-top-color: var(--pms-gray); }
+        .mvv-item h3 { color: var(--primary); margin-bottom: 20px; font-size: 1.5rem; }
+
+        /* SERVICIOS */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .service-card { 
+            background: var(--light); 
+            padding: 25px; 
+            border-left: 6px solid var(--pms-gray); 
+            font-weight: 600;
+            color: var(--primary);
+            transition: 0.3s;
+        }
+        .service-card:hover { background: var(--primary); color: var(--white); }
+
+        /* CONTACTO */
+        form { background: var(--light); padding: 50px; border-radius: 8px; max-width: 700px; margin: 0 auto; border: 1px solid #ddd; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 25px; border: 1px solid var(--pms-gray); border-radius: 4px; box-sizing: border-box; font-family: inherit; }
+        button { 
+            background: var(--primary); 
+            color: var(--white); 
+            padding: 18px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            width: 100%; 
+            font-weight: 700; 
+            font-size: 1.2em;
+            text-transform: uppercase;
+        }
+        button:hover { background: var(--primary-dark); }
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 1000; }
+
+        footer { background: var(--primary); color: white; text-align: center; padding: 50px; border-top: 5px solid var(--pms-gray); }
 
         .fade { animation: fadeEffect 1.5s; }
-        @keyframes fadeEffect {
-            from { opacity: 0.4; }
-            to { opacity: 1; }
-        }
+        @keyframes fadeEffect { from { opacity: 0.4; } to { opacity: 1; } }
 
-        /* RESPONSIVE: En celulares vuelve a ser una sola columna */
-        @media (max-width: 900px) {
-            .mvv-container {
-                grid-template-columns: 1fr; 
-            }
-            .slider { height: 250px; }
-            .slide img { height: 250px; }
-            section { padding: 40px 5%; }
+        @media (max-width: 992px) {
+            .mvv-container { grid-template-columns: 1fr; }
+            .top-bar { flex-direction: column; text-align: center; gap: 10px; }
+            header { flex-direction: column; gap: 20px; }
+            .brand-name { border-left: none; padding-left: 0; text-align: center; }
+            nav { justify-content: center; height: auto; padding: 15px; flex-wrap: wrap; }
+            .slider { height: 300px; }
         }
     </style>
 </head>
 <body>
 
+<div class="top-bar">
+    <div>
+        <span>📧 gerenciageneral@pms.com.do</span>
+    </div>
+    <div>
+        <span>📞 829-576-5655</span>
+        <span>📞 809-303-3573</span>
+    </div>
+</div>
+
 <header>
-    <a href="https://pms.com.do">
+    <a href="index.html" class="header-brand">
         <img alt="Logo PMS" class="logo" src="images/logo_pms.png">
+        <div class="brand-name">
+            POWER MARKET SOLUTIONS,<br>S.R.L.
+        </div>
     </a>
 </header>
 
@@ -222,52 +227,50 @@
 
 <section id="conocenos">
     <h2>¿Quiénes Somos?</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 50px;">
-        <div style="flex: 1; min-width: 300px;">
-            <p><strong>Power Market Solutions, SRL (PMS)</strong> es una empresa dedicada a brindar soluciones estratégicas en energía, regulación y optimización de costos.</p>
-            <p>Nuestro equipo combina excelencia técnica con un conocimiento profundo del mercado eléctrico dominicano, garantizando resultados eficientes para su empresa.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 50px; align-items: center; margin-bottom: 60px;">
+        <div style="flex: 1; min-width: 300px; font-size: 1.1rem;">
+            <p><strong>Power Market Solutions, S.R.L. (PMS)</strong> es una empresa dedicada a brindar soluciones estratégicas en energía, regulación y optimización de costos en el sector eléctrico.</p>
+            <p>Nuestro equipo multidisciplinario combina años de excelencia técnica con un conocimiento profundo del Mercado Eléctrico Dominicano (MEM), garantizando eficiencia y cumplimiento para nuestros clientes.</p>
         </div>
         <div style="flex: 1; min-width: 300px;">
-            <img alt="Consultoría Energética" style="width: 100%; border-radius: 10px;" src="images/PMS1.png">
+            <img alt="Consultoría Energética" style="width: 100%; border-radius: 4px; border: 1px solid var(--pms-gray);" src="images/PMS1.png">
         </div>
     </div>
 
     <div class="mvv-container">
         <div class="mvv-item">
             <h3>✨ Misión</h3>
-            <p>Brindar soluciones estratégicas y técnicas aportando eficiencia y cumplimiento regulatorio a través de un equipo experto.</p>
+            <p>Brindar soluciones estratégicas y técnicas aportando eficiencia, valor agregado y cumplimiento regulatorio a través de un equipo experto y comprometido.</p>
         </div>
         <div class="mvv-item">
             <h3>✨ Visión</h3>
-            <p>Ser la consultora de referencia en el Mercado Eléctrico Dominicano, reconocida por nuestra excelencia y anticipación a cambios.</p>
+            <p>Ser la consultora de referencia líder en el Mercado Eléctrico Dominicano, reconocida por nuestra excelencia técnica y capacidad de anticipación.</p>
         </div>
         <div class="mvv-item">
             <h3>✨ Valores</h3>
-            <p>Integridad, Excelencia, Responsabilidad y Compromiso Real con el Cliente en cada proyecto.</p>
+            <p>Integridad, Excelencia Profesional, Responsabilidad y un Compromiso Real con el éxito de cada uno de nuestros clientes.</p>
         </div>
     </div>
 </section>
 
-<section id="servicios" style="background: #f9f9f9;">
+<section id="servicios" style="background: #fdfdfd; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
     <h2>Nuestros Servicios</h2>
     <div class="services-grid">
-        <div class="service-card">Gestión Comercial Agentes del MEM.</div>
-        <div class="service-card">Habilitación de SMC (Medición Comercial).</div>
-        <div class="service-card">Gestión y administración de contratos (PPA).</div>
-        <div class="service-card">Tramitación de Código de Conexión.</div>
-        <div class="service-card">Gestión de Puesta en marcha en SENI.</div>
-        <div class="service-card">Análisis de Mercado y Regulatorio.</div>
+        <div class="service-card">Gestión Comercial Agentes del MEM</div>
+        <div class="service-card">Habilitación de SMC (Medición Comercial)</div>
+        <div class="service-card">Gestión y administración de contratos (PPA)</div>
+        <div class="service-card">Tramitación de Código de Conexión</div>
+        <div class="service-card">Gestión de Puesta en marcha en SENI</div>
+        <div class="service-card">Análisis de Mercado y Regulatorio</div>
     </div>
 </section>
 
 <section id="contacto">
     <h2>Contáctanos</h2>
-    <p style="text-align: center; margin-bottom: 20px;">¿Necesitas una propuesta? Nuestro equipo está listo para asesorarte.</p>
-    
     <form action="https://formsubmit.co/gerenciageneral@pms.com.do" method="POST">
-        <input name="name" placeholder="Nombre completo" required type="text">
+        <input name="name" placeholder="Nombre completo o Empresa" required type="text">
         <input name="email" placeholder="Correo electrónico corporativo" required type="email">
-        <textarea name="message" placeholder="¿En qué podemos ayudarte?" required rows="5"></textarea>
+        <textarea name="message" placeholder="Describa brevemente su requerimiento..." required rows="5"></textarea>
         <button type="submit">Enviar Solicitud</button>
     </form>
 </section>
@@ -277,7 +280,7 @@
 </a>
 
 <footer>
-    <p>© 2025 Power Market Solutions, SRL. Santo Domingo, R.D.</p>
+    <p>© 2025 Power Market Solutions, S.R.L. | Santo Domingo, República Dominicana</p>
 </footer>
 
 <script>
@@ -285,13 +288,11 @@
     showSlides();
     function showSlides() {
         let slides = document.getElementsByClassName("slide");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
+        for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1;}
         slides[slideIndex-1].style.display = "block";
-        setTimeout(showSlides, 4000); 
+        setTimeout(showSlides, 5000); 
     }
 </script>
 

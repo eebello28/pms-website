@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PMS | Enlaces</title>
+
+  <!-- Para que no se indexe (no “aparece” en Google) -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <style>
+    body{margin:0; font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif; background:#0b1220; color:#eaf0ff;}
+    .wrap{min-height:100vh; display:flex; align-items:center; justify-content:center; padding:22px;}
+    .card{width:min(520px,100%); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+          border-radius:16px; padding:20px; box-shadow:0 12px 30px rgba(0,0,0,.35);}
+    h1{font-size:20px; margin:0 0 6px;}
+    p{margin:0 0 14px; opacity:.9}
+    .btns{display:grid; gap:10px; margin-top:10px;}
+    a{display:flex; justify-content:space-between; align-items:center; gap:10px;
+      padding:12px 14px; border-radius:12px; text-decoration:none; font-weight:650;}
+    a.primary{background:#eaf0ff; color:#0b1220;}
+    a.secondary{background:rgba(255,255,255,.10); color:#eaf0ff; border:1px solid rgba(255,255,255,.16);}
+    .pill{font-size:12px; font-weight:800; padding:3px 10px; border-radius:999px;
+      background:rgba(11,18,32,.18); border:1px solid rgba(255,255,255,.12);}
+    .small{margin-top:14px; font-size:12px; opacity:.85}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main class="card">
+      <h1>Power Market Solutions (PMS)</h1>
+      <p>Contacto rápido (desde QR)</p>
+
+      <div class="btns" id="links"></div>
+
+      <div class="small">
+        Este enlace está pensado para QR. Si cambiamos números, solo actualizamos esta página y el QR sigue igual.
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // ✅ Edita solo esto cuando cambies números/enlaces
+    const site = "https://www.pms.com.do/";
+
+    // Teléfonos en formato internacional SIN "+" ni espacios
+    // RD con +1: 18295765655, 18093033573, etc.
+    const contacts = [
+      { label: "WhatsApp Derlyn Alonzo", phone: "18295765655", msg: "Hola Derlyn, vengo desde el QR de PMS. Quisiera una consulta." },
+      { label: "WhatsApp Elvyn Encarnación",  phone: "18093033573", msg: "Hola Elvyn, vengo desde el QR de PMS. Quisiera una consulta." }
+    ];
+
+    const links = document.getElementById("links");
+
+    function wa(phone, msg){
+      return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    }
+
+    // Botones WhatsApp
+    for (const c of contacts) {
+      const a = document.createElement("a");
+      a.className = "primary";
+      a.href = wa(c.phone, c.msg);
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.innerHTML = `<span>${c.label}</span><span class="pill">${c.phone}</span>`;
+      links.appendChild(a);
+    }
+
+    // Botón web
+    const w = document.createElement("a");
+    w.className = "secondary";
+    w.href = site;
+    w.innerHTML = `<span>Visitar www.pms.com.do</span><span class="pill">Web</span>`;
+    links.appendChild(w);
+  </script>
+</body>
+</html>

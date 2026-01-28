@@ -60,6 +60,7 @@
 
   <script>
     const site = "https://www.pms.com.do/";
+    const email = "gerenciageneral@pms.com.do";
 
     const contacts = [
       { label: "Derlyn Alonzo", phone: "18295765655", msg: "Hola Derlyn, vengo desde el QR de PMS. Quisiera una consulta." },
@@ -87,6 +88,17 @@
     w.href = site;
     w.innerHTML = `<span>www.pms.com.do</span><span class="pill">Web</span>`;
     links.appendChild(w);
+    
+    // Botón correo
+const m = document.createElement("a");
+m.className = "secondary";
+m.href = `mailto:${email}`;
+m.innerHTML = `<span>${email}</span><span class="pill">Email</span>`;
+links.appendChild(m);
+
+    
+
+    
   </script>
 </body>
 </html>
